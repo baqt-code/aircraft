@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Traffic Control Tower</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .radar-screen {
+            background-color: #000;
+            border: 5px solid #00ff00;
+            height: 200px;
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .radar-blip {
+            position: absolute;
+            background-color: #00ff00;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .flight-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Air Traffic Control Tower</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" id="weather-link">Weather Conditions</a></li>
+            <li><a href="#" id="runways-link">Runways</a></li>
+        </ul>
+    </nav>
+
+    <div class="radar-screen" id="radar-screen">
+        <!-- Blips will be added here -->
+    </div>
+
+    <div class="flight-info hidden" id="weather-info">
+        <h2>Weather Forecast</h2>
+        <!-- Weather information will be displayed here -->
+    </div>
+
+    <div class="flight-info hidden" id="runways-info">
+        <h2>Runway Information</h2>
+        <!-- Runway information will be displayed here -->
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Air Traffic Control Tower</p>
+    </footer>
+
+    <script>
+        // Function to generate random radar blip positions
+        function getRandomPosition(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to add radar blip
+        function addRadarBlip() {
+            // Create a new radar blip element
+            var radarBlip = document.createElement('div');
+            radarBlip.className = 'radar-blip';
+            radarBlip.style.top = getRandomPosition(150, 190) + 'px'; // Randomize top position at the bottom
+            radarBlip.style.left = getRandomPosition(0, 790) + 'px'; // Randomize left position
+
+            // Append radar blip to radar screen
+            document.getElementById('radar-screen').appendChild(radarBlip);
+        }
+
+        // Call addRadarBlip function periodically to add blips
+        setInterval(addRadarBlip, 1000); // Add a new blip every second
+
+        // Function to handle weather link click
+        document.getElementById('weather-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('weather-info').classList.toggle('hidden');
+        });
+
+        // Function to handle runways link click
+        document.getElementById('runways-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('runways-info').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

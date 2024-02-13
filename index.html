@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="assets/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-form" id="pilotLoginForm">
+            <h2>Pilot Login</h2>
+            <form action="/" method="post">
+                <label for="pilotId">Pilot ID:</label>
+                <input type="text" id="pilotId" name="PILOT_ID" required>
+                <label for="aircraftId">Aircraft ID:</label>
+                <input type="text" id="aircraftId" name="AIRCRAFT_ID" required>
+                <label for="pilotPassword">Password:</label>
+                <input type="password" id="pilotPassword" name="Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="/" id="atcLoginForm">
+            <h2>ATC Tower Employee Login</h2>
+            <form action="/" method="post">
+                <label for="atcId">ATC ID:</label>
+                <input type="text" id="atcId" name="ATC_ID" required>
+                <label for="airportId">Airport ID:</label>
+                <input type="text" id="airportId" name="AIRPORT_ID" required>
+                <label for="atcPassword">Password:</label>
+                <input type="password" id="atcPassword" name="Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <p>New user? <a href="#" onclick="showRegisterForm()">Register here</a></p>
+    </div>
+    <div id="registrationForm" style="display:none;">
+        <div class="container">
+            <div class="login-form">
+                <h2>Pilot Registration</h2>
+                <form action="login.html" method="post">
+                    <label for="newPilotId">Pilot ID:</label>
+                    <input type="text" id="newPilotId" name="PILOT_ID" required>
+                    <label for="newAircraftID">Aircraft ID:</label>
+                    <input type="text" id="newAircraftID" name="AIRCRAFT_ID" required>
+                    <label for="newPilotPassword">Password:</label>
+                    <input type="password" id="newPilotPassword" name="Password" required>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+            <div class="login-form">
+                <h2>ATC Tower Employee Registration</h2>
+                <form action="login.html" method="post">
+                    <label for="newATCId">ATC ID:</label>
+                    <input type="text" id="newATCId" name="ATC_ID" required>
+                    <label for="newAirportId">Airport ID:</label>
+                    <input type="text" id="newAirportId" name="AIRPORT_ID" required>
+                    <label for="newATCPassword">Password:</label>
+                    <input type="password" id="newATCPassword" name="Password" required>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showRegisterForm() {
+            document.getElementById("pilotLoginForm").style.display = "none";
+            document.getElementById("atcLoginForm").style.display = "none";
+            document.getElementById("registrationForm").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

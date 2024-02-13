@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot Dashboard</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="assets/pilot.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Pilot Dashboard</h1>
+        <div class="dashboard-section">
+            <p>Your ID: <span id="pilot-id">---</span></p>
+            <p>Your Aircraft ID: <span id="aircraft-id">---</span></p>
+            <h2>Aircraft Information</h2>
+            <p><strong>Cruise Speed:</strong> <span id="cruise-speed">---</span> knots</p>
+            <p><strong>Altitude:</strong> <span id="altitude">---</span> feet</p>
+            <p><strong>Fuel Remaining:</strong> <span id="fuel-remaining">---</span></p>
+            <p><strong>Source Airport:</strong> <span id="source-airport">---</span></p>
+            <p><strong>Destination Airport:</strong> <span id="destination-airport">---</span></p>
+            <p><strong>Weather:</strong> <span id="weather">---</span></p>
+            <button id="emergency-button">Emergency</button>
+        </div>
+        <div class="dashboard-section">
+            <h2>Nearby Airports & Emergency Landing Sites</h2>
+            <table id="nearby-table">
+                <thead>
+                    <tr>
+                        <th>Airport Name</th>
+                        <th>Distance</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="pilot.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

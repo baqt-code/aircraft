@@ -1,0 +1,65 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#airport-details, #emergency-landing-sites {
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#airport-table, #emergency-landing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#airport-table th, #airport-table td, #emergency-landing-table th, #emergency-landing-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #666;
+}
+
+#airport-table th, #emergency-landing-table th {
+    background-color: #444;
+    border-bottom: 2px solid #999;
+}
+
+#airport-table tbody tr:nth-child(even), #emergency-landing-table tbody tr:nth-child(even) {
+    background-color: #333;
+}
+
+button {
+    background-color: #004080;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0059b3;
+}
+
+button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
